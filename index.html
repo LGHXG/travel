@@ -441,14 +441,21 @@
 <script src="js/jquery.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script>
-    $('.carousel').carousel({
-		interval: 2000
-	});
-    $('.carousel a.left').click(function () {
-		$('.carousel').carousel('prev')
-    });
-    $('.carousel a.right').click(function () {
-        $('.carousel').carousel('next')
+    $(document).ready(function () {
+        /*轮播图*/
+        $('.carousel').carousel({
+            interval: 2000
+        });
+        $('.carousel a.left').click(function () {
+            $('.carousel').carousel('prev')
+        });
+        $('.carousel a.right').click(function () {
+            $('.carousel').carousel('next')
+        });
+
+        /*nav隐藏显示*/
+		(function navSwitch() {
+        }())
     })
 </script>
 </body>

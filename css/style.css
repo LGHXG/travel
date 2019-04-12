@@ -160,6 +160,10 @@ h2.heading-title{
 =====================================================*/
 .section-menu{
 	z-index: 9999;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
 }
 .navbar{
 	margin-bottom: 0;
