@@ -19,7 +19,7 @@
 </head>
 <body>
 <!-- section menu start -->
-<section class="section-menu">
+<section id="section-menu">
 	<div class="menu-container">
 		<div class="navbar navbar-default main-nav">
 			<div class="container">
@@ -455,6 +455,12 @@
 
         /*nav隐藏显示*/
 		(function navSwitch() {
+		    var lastTop = $(window).scrollTop();
+			$(window).scroll(function () {
+				var currentTop = $(window).scrollTop();
+				(currentTop - lastTop) > 0 ? $('#section-menu').slideUp() : $('#section-menu').slideDown();
+				lastTop = currentTop;
+            })
         }())
     })
 </script>
