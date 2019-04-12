@@ -458,14 +458,13 @@
 		    var lastTop = $(window).scrollTop();
             $(window).scroll(function () {
                 var currentTop = $(window).scrollTop();
-                if (currentTop - lastTop < 0) {
-				    $('#section-menu').slideDown();
+                if (currentTop < lastTop) {
+				    $('#section-menu').slideDown("slow");
+				} else {
+                    $('#section-menu').slideUp("slow");
 				}
 				lastTop = currentTop;
             });
-            $(document).click(function () {
-				$('#section-menu').slideUp();
-            })
         }())
     })
 </script>
