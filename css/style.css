@@ -18,6 +18,7 @@ body{
 	color: #333333;
 	font-size: 14px;
 	background: #fff;
+	height: 100%;
 }
 
 
@@ -486,6 +487,10 @@ section-portfolio
 	-o-transition: all .3s linear 0s;
 	transition: all .3s linear 0s;
 }
+.image-overlay a {
+	width:100%;
+	height:auto;
+}
 .image-overlay a i{
 	font-size: 50px;
 	color: #fff;
@@ -493,6 +498,50 @@ section-portfolio
 }
 .portfolio-box:hover .image-overlay{
 	opacity: 1;
+}
+/*弹窗*/
+.item-layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	z-index: 99;
+	overflow-y:auto;
+	overflow-x: hidden;
+	background-color: #000;
+}
+/*body::-webkit-scrollbar {
+    display:none;
+}*/
+.item-layer img {
+	max-width: 100vw;
+	max-height: 100vh;
+	display: block;
+	margin: 0 auto;
+	cursor: zoom-in;
+}
+.max-img {
+	max-height: inherit!important;
+	cursor: zoom-out!important;
+}
+.item-layer .close-layer {
+	position: fixed;
+	right: 30px;
+	top: 20px;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: #222;
+	text-align: center;
+	line-height: 48px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+}
+.item-layer .close-layer:hover {
+	color: #cd8f00;
 }
 
 /*SECTION contact

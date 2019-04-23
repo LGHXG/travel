@@ -301,30 +301,30 @@
 		<div class="row">
 			<div class="col-md-4 col-sm-4 portfolio-margin">
 				<div class="portfolio-box">
-					<img src="images/items/tengyue.jpg" alt="" class="img-responsive">
+					<img src="images/items/tengye.jpg" alt="" class="img-responsive">
 					<div class="image-overlay text-center">
-						<a href="images/items/tengyue.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
+						<a href="javascript:;" data-src="images/items/tengye.alibaba.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
 					</div>
 				</div>
-				<p><a href="https://cntengye.en.alibaba.com/">腾跃</a></p>
+				<p><a href="https://cntengye.en.alibaba.com/" title="点击跳转到上线项目">腾跃</a></p>
 			</div> <!-- col-md-4 end -->
 			<div class="col-md-4 col-sm-4 portfolio-margin">
 				<div class="portfolio-box">
 					<img src="images/items/weiwen.jpg" alt="" class="img-responsive">
 					<div class="image-overlay text-center">
-						<a href="images/items/weiwen.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
+						<a href="javascript:;" data-src="images/items/weiwen.alibaba.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
 					</div>
 				</div>
-				<p><a href="https://szweiwenkeji.en.alibaba.com/">威文</a></p>
+				<p><a href="https://szweiwenkeji.en.alibaba.com/" title="点击跳转到上线项目">威文</a></p>
 			</div> <!-- col-md-4 end -->
 			<div class="col-md-4 col-sm-4 portfolio-margin">
 				<div class="portfolio-box">
 					<img src="images/items/zhengmei.jpg" alt="" class="img-responsive">
 					<div class="image-overlay text-center">
-						<a href="images/items/zhengmei.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
+						<a href="javascript:;" data-src="images/items/zhengmei.alibaba.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
 					</div>
 				</div>
-				<p><a href="https://zhengmei.en.alibaba.com/">正美</a></p>
+				<p><a href="https://zhengmei.en.alibaba.com/" title="点击跳转到上线项目">正美</a></p>
 			</div> <!-- col-md-4 end 3step-->
 			<div class="clearfix"></div>
 
@@ -332,34 +332,39 @@
 				<div class="portfolio-box">
 					<img src="images/items/runbaoshun.jpg" alt="" class="img-responsive">
 					<div class="image-overlay text-center">
-						<a href="images/items/runbaoshun.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
+						<a href="javascript:;" data-src="images/items/runbaoshun.alibaba.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
 					</div>
 				</div>
-				<p><a href="https://szrbs.en.alibaba.com/">润宝顺</a></p>
+				<p><a href="https://szrbs.en.alibaba.com/" title="点击跳转到上线项目">润宝顺</a></p>
 			</div> <!-- col-md-4 end -->
 			<div class="col-md-4 col-sm-4 portfolio-margin">
 				<div class="portfolio-box">
 					<img src="images/items/jinshida.jpg" alt="" class="img-responsive">
 					<div class="image-overlay text-center">
-						<a href="images/items/jinshida.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
+						<a href="javascript:;" data-src="images/items/jinshida.alibaba.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
 					</div>
 				</div>
-				<p><a href="https://kingstartech.en.alibaba.com/">金仕达</a></p>
+				<p><a href="https://kingstartech.en.alibaba.com/" title="点击跳转到上线项目">金仕达</a></p>
 			</div> <!-- col-md-4 end -->
 			<div class="col-md-4 col-sm-4 portfolio-margin">
 				<div class="portfolio-box">
 					<img src="images/items/caiyi.jpg" alt="" class="img-responsive">
 					<div class="image-overlay text-center">
-						<a href="images/items/caiyi.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
+						<a href="javascript:;" data-src="images/items/caiyi.alibaba.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a>
 					</div>
 				</div>
-				<p><a href="#">彩艺</a></p>
+				<p><a href="#" title="点击跳转到该上线项目">彩艺</a></p>
 			</div> <!-- col-md-4 end 6 step -->
 			<div class="clearfix"></div>
 
 		</div>
 	</div>
 </section>
+
+<div class="item-layer" style="display: none;">
+	<img src="" alt="">
+	<a href="javascript:;" class="close-layer">X</a>
+</div>
 <!-- section portfolio end -->
 
 <!-- section contact start -->
@@ -465,7 +470,24 @@
 				}
 				lastTop = currentTop;
             });
-        }())
+        }());
+
+		/*item*/
+        $('.portfolio-box').click(function (e) {
+            /*弹窗显示，获取图片路径*/
+            $('.item-layer').show();
+            var img = $('.item-layer img');
+            img.attr('src',$(e.target).find('a').attr('data-src'));
+        });
+        /*图片放大*/
+        $('.item-layer img').click(function (e) {
+            $(e.target).toggleClass('max-img');
+            $('.item-layer .close-layer').toggle();
+        });
+        /*关闭弹窗*/
+        $('.close-layer').click(function () {
+            $('.item-layer').hide();
+        })
     })
 </script>
 </body>
