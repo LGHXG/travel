@@ -160,7 +160,7 @@ h2.heading-title{
 	navbar-menu
 =====================================================*/
 #section-menu{
-	z-index: 9999;
+	z-index: 99;
 	width: 100%;
 	position: fixed;
 	left: 0;
@@ -507,7 +507,7 @@ section-portfolio
 	bottom: 0;
 	right: 0;
 	width: 100%;
-	z-index: 99;
+	z-index: 999;
 	overflow-y:auto;
 	overflow-x: hidden;
 	background-color: #000;
